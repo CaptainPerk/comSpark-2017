@@ -13,24 +13,6 @@ public class Shooter : MonoBehaviour {
     // Use this for initialization
     void Start () {
         shotSpawn = transform.Find("ShotSpawn");
-
-        if (shotSpawn == null)
-        {
-            Debug.Log("Could not find 'ShotSpawn' game object related to transform.  Will use transform.position for future instantiations.");
-        }
-
-        if (shotPrefab == null)
-        {
-            Debug.Log("There is no shot prefab!");
-        }
-        else
-        {
-            if (shotPrefab.GetComponent<Rigidbody2D>() == null)
-            {
-                Debug.Log("There was no Rigidbody2D component on shot prefab.  Adding and setting gravity to 0.");
-                shotPrefab.AddComponent<Rigidbody2D>().gravityScale = 0.0f;
-            }
-        }
     }
 	
 	// Update is called once per frame
